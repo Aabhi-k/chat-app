@@ -1,0 +1,39 @@
+.mainContainer {
+  margin: 1rem !important;
+  background: #1e1d2a !important;
+  min-height: 100vh !important;
+}
+
+.gridContainer {
+  padding: 1rem !important;
+  background: #1e1d2a !important;
+}
+
+.column {
+  transition: all 0.3s ease !important;
+}
+
+.stickyColumn {
+  background: transparent !important;
+  border-radius: 8px !important;
+}
+
+.contentColumn {
+  background: #2d2b3a !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+
+.mobileContainer {
+  background: #2d2b3a !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+}
+
+.defaultContainer {
+  background: #2d2b3a !important;
+  padding: 2rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}

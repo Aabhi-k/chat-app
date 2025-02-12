@@ -1,26 +1,24 @@
 import React, { useState } from 'react'
 import { Icon, Popup } from 'semantic-ui-react'
 import calculateTime from '../../utils/calculateTime'
+import styles from './Message.module.css'
 
-
-function Message({ message, user, deleteMsg, bannerProfilePic, divRef })
-{
+function Message({ message, user, deleteMsg, bannerProfilePic, divRef }) {
   const [deleteIcon, showDeleteIcon] = useState(false)
-
   const ifYouSender = message.sender === user._id
 
   return (
-    <div className='bubbleWrapper' ref={divRef}>
+    <div className={styles.bubbleWrapper} ref={divRef}>
       <div
-        className={ifYouSender ? 'inlineContainer own' : 'inlineContainer'}
+        className={`${styles.inlineContainer} ${ifYouSender ? styles.own : ''}`}
         onClick={() => ifYouSender && showDeleteIcon(!deleteIcon)}
       >
         <img
-          className='inlineIcon'
+          className={styles.inlineIcon}
           src={ifYouSender ? user.profilePicUrl : bannerProfilePic}
         />
 
-        <div className={ifYouSender ? 'ownBubble own' : 'otherBubble other'}>
+        <div className={ifYouSender ? styles.ownBubble : styles.otherBubble}>
           {message.msg}
         </div>
 
@@ -30,7 +28,7 @@ function Message({ message, user, deleteMsg, bannerProfilePic, divRef })
               <Icon
                 name='trash'
                 color='red'
-                style={{ cursor: 'pointer' }}
+                className={styles.deleteIcon}
                 onClick={() => deleteMsg(message._id)}
               />
             }
@@ -40,7 +38,9 @@ function Message({ message, user, deleteMsg, bannerProfilePic, divRef })
         )}
       </div>
 
-      <span className={ifYouSender ? 'own' : 'other'}>{calculateTime(message.date)}</span>
+      <span className={ifYouSender ? styles.timestampOwn : styles.timestamp}>
+        {calculateTime(message.date)}
+      </span>
     </div>
   )
 }

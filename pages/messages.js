@@ -14,6 +14,7 @@ import Message from '../components/Messages/Message'
 import getUserInfo from '../utils/getUserInfo'
 import newMsgSound from '../utils/newMsgSound'
 import cookie from 'js-cookie'
+import styles from './messages.module.css'
 
 const scrollDivToBottom = divRef => divRef.current !== null && divRef.current.scrollIntoView({ behaviour: 'smooth' })
 
@@ -265,10 +266,10 @@ function Messages({ chatsData, user })
 
   return (
     <>
-      <Segment padded basic size='huge' style={{ marginTop: '5px' }}>
+      <Segment padded basic size='huge' className={styles.mainSegment}>
         <Divider hidden />
-
-        <div style={{ marginBottom: '10px' }}>
+        
+        <div className={styles.chatListContainer}>
           <ChatListSearch chats={chats} setChats={setChats} user={user} />
         </div>
 
@@ -280,7 +281,7 @@ function Messages({ chatsData, user })
             <Grid stackable>
               <Grid.Column width={4}>
                 <Comment.Group size='big'>
-                  <Segment raised style={{ overflow: 'auto', maxHeight: '32rem' }}>
+                  <Segment raised className={styles.chatListSegment}>
                     {chats.map((chat, i) => (
                       <Chat
                         key={i}
@@ -296,20 +297,11 @@ function Messages({ chatsData, user })
               <Grid.Column width={12}>
                 {router.query.message && (
                   <>
-                    <div
-                      style={{
-                        overflow: 'auto',
-                        overflowX: 'hidden',
-                        maxHeight: '40rem',
-                        height: '40rem',
-                        backgroundColor: 'whitesmoke',
-                        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
-                      }}
-                    >
-                      <div style={{ position: 'sticky', top: '0' }}>
+                    <div className={styles.messagesContainer}>
+                      <div className={styles.stickyBanner}>
                         <Banner bannerData={bannerData} />
                       </div>
-
+                      
                       {messages.length > 0 &&
                         messages.map((message, i) => (
                           <Message

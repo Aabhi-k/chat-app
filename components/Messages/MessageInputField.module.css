@@ -1,0 +1,40 @@
+.inputContainer {
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  background: #2d2b3a;
+  border-radius: 0 0 8px 8px;
+}
+
+.segment {
+  background: #363348 !important;
+  border: none !important;
+  padding: 1rem !important;
+}
+
+.input {
+  background: #2d2b3a !important;
+  border: 2px solid #6c5ce7 !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+}
+
+.input input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.input input::placeholder {
+  color: #a8a6b8 !important;
+}
+
+.button {
+  background: #6c5ce7 !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+}
+
+.button:hover {
+  background: #5b4bd4 !important;
+  transform: scale(1.02) !important;
+}

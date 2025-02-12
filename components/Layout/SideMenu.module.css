@@ -1,0 +1,49 @@
+.sideMenuList {
+  padding-top: 1rem !important;
+  background: #2d2b3a !important; /* Dark purple-gray background */
+  box-shadow: 3px 0 15px rgba(0,0,0,0.3) !important;
+  border-radius: 8px !important;
+  min-height: 300px !important;
+}
+
+.menuItem {
+  padding: 1.2rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+  border-left: 4px solid transparent !important;
+}
+
+.menuItem:hover {
+  background: #363348 !important; /* Slightly lighter on hover */
+  border-left: 4px solid #6c5ce7 !important; /* Purple accent */
+}
+
+.menuItem.active {
+  background: #363348 !important;
+  border-left: 4px solid #6c5ce7 !important;
+}
+
+.icon {
+  margin-right: 0.8rem !important;
+  color: #a8a6b8 !important; /* Light gray for icons */
+}
+
+.menuItem:hover .icon,
+.menuItem.active .icon {
+  color: #6c5ce7 !important; /* Purple on hover/active */
+}
+
+.menuHeader {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+}
+
+.divider {
+  margin: 0.5rem 0 !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Special styles for active message notification */
+.unreadIcon {
+  color: #ff7675 !important; /* Coral color for unread */
+}

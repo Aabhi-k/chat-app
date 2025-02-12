@@ -1,0 +1,52 @@
+.mainSegment {
+  margin-top: 5px !important;
+  background: #1e1d2a !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
+.chatListContainer {
+  margin-bottom: 10px !important;
+  color: #ffffff !important;
+}
+
+.chatListSegment {
+  overflow: auto !important;
+  max-height: 32rem !important;
+  background: #2d2b3a !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  color: #ffffff !important;
+}
+
+.messagesContainer {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  max-height: 40rem !important;
+  height: 40rem !important;
+  background: #363348 !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+}
+
+.stickyBanner {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1 !important;
+  color: #ffffff !important;
+}
+
+/* Add scrollbar styling */
+.messagesContainer::-webkit-scrollbar,
+.chatListSegment::-webkit-scrollbar {
+  width: 6px;
+  background: #2d2b3a;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb,
+.chatListSegment::-webkit-scrollbar-thumb {
+  background: #6c5ce7;
+  border-radius: 3px;
+}

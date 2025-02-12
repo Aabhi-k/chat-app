@@ -1,0 +1,35 @@
+.menu {
+  background: #2d2b3a !important;
+  padding: 1rem !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+}
+
+.container {
+  background: transparent !important;
+}
+
+.menuItem {
+  color: #a8a6b8 !important;
+  font-size: 1.1rem !important;
+  padding: 0.8rem 1.2rem !important;
+  margin: 0 0.5rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.menuItem:hover {
+  background: #363348 !important;
+  color: #6c5ce7 !important;
+}
+
+.menuItem.active {
+  background: #363348 !important;
+  color: #6c5ce7 !important;
+  border-bottom: 3px solid #6c5ce7 !important;
+}
+
+.icon {
+  margin-right: 0.5rem !important;
+}

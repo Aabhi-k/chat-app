@@ -1,0 +1,59 @@
+.bubbleWrapper {
+  padding: 10px 5px;
+}
+
+.inlineContainer {
+  display: inline-flex;
+  align-items: flex-end;
+  width: 100%;
+  cursor: pointer;
+}
+
+.inlineIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #6c5ce7;
+  object-fit: cover;
+}
+
+.own {
+  flex-direction: row-reverse;
+}
+
+.ownBubble {
+  background: #6c5ce7;
+  color: white;
+  border-radius: 20px 20px 3px 20px;
+  margin: 1px 15px;
+  padding: 15px;
+  max-width: 60%;
+}
+
+.otherBubble {
+  background: #363348;
+  color: white;
+  border-radius: 20px 20px 20px 3px;
+  margin: 1px 15px;
+  padding: 15px;
+  max-width: 60%;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #a8a6b8;
+  margin: 5px 15px;
+}
+
+.timestampOwn {
+  text-align: right;
+}
+
+.deleteIcon {
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.2);
+}
