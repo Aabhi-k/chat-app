@@ -1,8 +1,8 @@
-import { Router } from 'express'
-const router = Router()
-import { findOne } from '../models/ChatModel'
-import { findById } from '../models/UserModel'
-import authMiddleware from '../middleware/authMiddleware'
+const express = require('express')
+const router = express.Router()
+const ChatModel = require('../models/ChatModel')
+const UserModel = require('../models/UserModel')
+const authMiddleware = require('../middleware/authMiddleware')
 
 
 // GET ALL CHATS
@@ -12,7 +12,7 @@ router.get('/', authMiddleware, async (req, res) =>
   {
     const { userId } = req
 
-    const user = await findOne({ user: userId }).populate('chats.messagesWith')
+    const user = await ChatModel.findOne({ user: userId }).populate('chats.messagesWith')
 
     let chatsToBeSent = []
 
@@ -44,7 +44,7 @@ router.get('/user/:userToFindId', authMiddleware, async (req, res) =>
 {
   try
   {
-    const user = await findById(req.params.userToFindId)
+    const user = await UserModel.findById(req.params.userToFindId)
 
     if(!user)
     {
@@ -70,7 +70,7 @@ router.delete(`/:messagesWith`, authMiddleware, async (req, res) =>
     const { userId } = req
     const { messagesWith } = req.params
 
-    const user = await findOne({ user: userId })
+    const user = await ChatModel.findOne({ user: userId })
 
     const chatToDelete = user.chats.find(chat => chat.messagesWith.toString() === messagesWith.toString())
 
@@ -95,4 +95,4 @@ router.delete(`/:messagesWith`, authMiddleware, async (req, res) =>
   }
 })
 
-export default router
+module.exports = router

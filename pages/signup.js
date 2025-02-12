@@ -214,7 +214,6 @@ function Signup()
       </Form>
 
       <Divider hidden />
-      
 
     </>
   )

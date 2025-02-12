@@ -1,7 +1,7 @@
-import { Router } from 'express'
-const router = Router()
-import authMiddleware from '../middleware/authMiddleware'
-import { find } from '../models/UserModel'
+const express = require('express')
+const router = express.Router()
+const authMiddleware = require('../middleware/authMiddleware')
+const UserModel = require('../models/UserModel')
 
 
 router.get('/:searchText', authMiddleware, async (req, res) =>
@@ -13,7 +13,7 @@ router.get('/:searchText', authMiddleware, async (req, res) =>
 
     if(searchText.length === 0) return
 
-    const results = await find({ name: { $regex: searchText, $options: 'i' } })
+    const results = await UserModel.find({ name: { $regex: searchText, $options: 'i' } })
 
     const resultsToBeSent = results.length > 0 && results.filter(result => result._id.toString() !== userId)
 
@@ -28,4 +28,4 @@ router.get('/:searchText', authMiddleware, async (req, res) =>
 })
 
 
-export default router
+module.exports = router
