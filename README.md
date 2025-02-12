@@ -17,3 +17,7 @@ Welcome to the Chat App! This application enables real-time communication betwee
 - **Database**: MongoDB for storing user information and chat histories.
 - **Real-Time Communication**: Socket.IO to facilitate instant messaging between users.
 
+![image](https://github.com/user-attachments/assets/bfa02ad0-50f2-4447-bbe6-388923eee5b5)
+
+
+![image](https://github.com/user-attachments/assets/a99ac7db-ea40-4d75-8367-ff6aab9df571)
